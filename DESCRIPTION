@@ -1,0 +1,36 @@
+Package: aseskit
+Type: Package
+Title: ASES Generic Toolkit
+Version: 0.1.0
+Author: Yiying Wang <wangy@aetna.com>
+Maintainer: Yiying Wang <wangy@aetna.com>
+Contributor: Shanshan Zou <zous@aetna.com>
+Description: This package contains frequently used tool functions 
+    for ASES.
+License: GPL
+Encoding: UTF-8
+LazyData: true
+Imports:
+    compiler,
+    crayon,
+    dplyr,
+    ggplot2,
+    glue,
+    gWidgets2,
+    jsonlite,
+    magrittr,
+    purrr,
+    readr,
+    remotes,
+    rlang,
+    rstudioapi,
+    stringr,
+    tibble,
+    tidyr,
+    tools,
+    utils
+RoxygenNote: 6.1.1
+Suggests: 
+    testthat,
+    vdiffr
+    
