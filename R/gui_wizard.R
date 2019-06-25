@@ -210,10 +210,10 @@ guiInputText <- function(prompt, caption, default, guiClassObj, ...){
     return(env0$txtVal)
 }
 
-#' @importFrom utils winDialogString
 .inputText.WinGui <- function(prompt=NULL, caption=NULL, default="", ...){
     if (Sys.info()['sysname'] == 'Windows'){
-        return(winDialogString(message=ifnull(prompt, "Input text"), default=default))
+        return(utils::winDialogString(message=ifnull(prompt, "Input text"), 
+                                      default=default))
     }else{
         .inputText.default(prompt, caption, default, ...)
     }
@@ -328,12 +328,11 @@ guiDialog <- function(prompt, caption, guiClassObj,
     return(env0$btnVal)
 }
 
-#' @importFrom utils winDialog
 .guiDialog.WinGui <- function(prompt=NULL, caption=NULL, type, ...){
     prompt <- ifnull(prompt, "Message")
     caption <- ifnull(caption, "Dialog")
     if (Sys.info()['sysname'] == 'Windows'){
-        out <- winDialog(type=type, message=prompt)
+        out <- utils::winDialog(type=type, message=prompt)
         return(if (length(out) == 0) NULL else if (out %in% c("YES", "OK")) 
             TRUE else FALSE)
     }else{
